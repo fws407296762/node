@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <script src="/public/js/vue.min.js"></script>
+    <script src="/public/js/vue-resource.min.js"></script>
+</head>
+<body>
+    <div id="main">
+        {{name}}
+    </div>
+    <script>
+        var v = new Vue({
+            el:"#main",
+            data:{
+                name:"符文送"
+            },
+            ready:function(){
+                this.$http.get("http://www.baidu.cn").then(function(data){
+                    console.log(this,12);
+                })
+            }
+        });
+    </script>
+</body>
+</html>
